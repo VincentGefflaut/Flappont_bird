@@ -1,21 +1,29 @@
 #pragma once
+
+#include <Imagine/Graphics.h>
+using namespace Imagine;
+#include <cmath>
+#include <cstdlib>
+#include <ctime>
+#include<iostream>
+#include <string>
 #include <vector>
+using namespace std;
 
 class GEMtity{
-    GEMtity GEMtity(string chemin_image, FVector pos, FVector speed, FVector acc = {0,0});  //constructeur
-    GEMtity ~GEMtity();  //destructeur
+    GEMtity(string chemin_image, vector<double> pos, vector<double> speed, vector<double> acc = {0,0});  //constructeur
+    ~GEMtity();  //destructeur
     //méthodes
     public:
     bool collision (GEMtity *entity);
     void setImage(string chemin[]);
-    void setBehaviour(FVector pos, FVector speed, FVector acc);
+    void setBehaviour(vector<double> pos, vector<double> speed, vector<double> acc);
 
-}
-
+};
 
 class GEMpage{
-    GEMpage GEMpage(string name, FVector dim);   //constructeur
-    GEMpage ~GEMpage();  //destructeur
+    GEMpage(string name, vector<double> dim);   //constructeur
+    ~GEMpage();  //destructeur
     //méthodes
     public:
     void refresh();  //rafraichit l'affichage de la page 
@@ -25,5 +33,4 @@ class GEMpage{
     void show (GEMtity *entity, bool etat);  //affiche une entité
     //attributs
     vector<GEMtity*> entities;  //liste des entités de la page  
-
-}
+};

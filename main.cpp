@@ -4,6 +4,7 @@ using namespace Imagine;
 #include <cstdlib>
 #include <ctime>
 #include <iostream>
+#include <string>
 using namespace std;
 
 #include "GEM.h"
