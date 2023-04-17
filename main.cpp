@@ -1,21 +1,15 @@
+#include "GEM.h"
 #include <Imagine/Graphics.h>
 using namespace Imagine;
 #include <cmath>
 #include <cstdlib>
 #include <ctime>
-#include <iostream>
+#include<iostream>
 #include <string>
 using namespace std;
 
-#include "GEM.h"
-int wWindow = 800;
-int hWindow = 600;
-
-int main(){
-    openWindow(wWindow,hWindow);
-
-
-
-    endGraphics();
+int main()
+{
+    cout << "Hello World!" << endl;
     return 0;
 }
