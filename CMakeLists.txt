@@ -1,8 +1,11 @@
-cmake_minimum_required(VERSION 3.5)
+cmake_minimum_required(VERSION 3.4)
+project(Flappont-Bird_Alexandre)
+list(APPEND CMAKE_FRAMEWORK_PATH /Library/Frameworks) #Mac, why not auto?
 
-project(Flappont_bird LANGUAGES CXX)
+find_package(Imagine REQUIRED)
 
-set(CMAKE_CXX_STANDARD 11)
-set(CMAKE_CXX_STANDARD_REQUIRED ON)
+add_executable(Flappont-Bird main.cpp GEM.h)
+add_library (GEM GEM.cpp)
+target_link_libraries(Flappont-Bird GEM)
+ImagineUseModules(Flappont-Bird Graphics)
 
-add_executable(Flappont_bird main.cpp)
