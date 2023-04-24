@@ -1,6 +1,7 @@
-#include "gempage.h"
+#include "GEMpage.h"
 #include "gemtity.h"
 #include <Imagine/Graphics.h>
+#include <Imagine/Images.h>
 using namespace Imagine;
 #include <cmath>
 #include <cstdlib>

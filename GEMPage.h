@@ -1,6 +1,6 @@
 #pragma once
-
 #include <Imagine/Graphics.h>
+#include <Imagine/Images.h>
 using namespace Imagine;
 #include <cmath>
 #include <cstdlib>
