@@ -26,7 +26,7 @@ class GEMtity{
     //méthodes
     public:
     bool collision (GEMtity *entity);
-    void setImage(string chemin[]);
+    void setImage(string chemin);
     void setBehaviour(double new_pos[2],  double new_speed[2], double new_acc[2]);
     void setPos(double new_pos[2]);
     void setSpeed(double new_speed[2]);

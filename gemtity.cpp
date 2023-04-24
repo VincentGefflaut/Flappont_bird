@@ -14,8 +14,8 @@ using namespace std;
 bool GEMtity::collision(GEMtity *entity){
 
 }
-void GEMtity::setImage(string chemin[]){
-    chemin_image = chemin[0];
+void GEMtity::setImage(string chemin){
+    load(image,chemin);
 }
 void GEMtity::setBehaviour(double new_pos[2],  double new_speed[2], double new_acc[2]){
     pos[0] = new_pos[0];
