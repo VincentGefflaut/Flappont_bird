@@ -23,8 +23,11 @@ class GEMtity{
     double acc[2];
     Image <Color> image;
 
-    //méthodes
+
+
     public:
+    QVector<QPointF> hitbox;
+    //méthodes
     bool collision (GEMtity *entity);
     void setImage(string chemin);
     void setBehaviour(double new_pos[2],  double new_speed[2], double new_acc[2]);
