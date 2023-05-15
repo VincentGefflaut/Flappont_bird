@@ -32,9 +32,7 @@ class GEMtity{
     void setPos(double new_pos[2]);
     void setSpeed(double new_speed[2]);
     void setAcc(double new_acc[2]);
-    void getPos(GEMtity* entity);
-    void getSpeed(GEMtity* entity);
-    void getAcc(GEMtity* entity);
+    void display();
     GEMtity(string path, double new_pos[2], double new_speed[2], double new_acc[2]);  //constructeur
     ~GEMtity();  //destructeur
 

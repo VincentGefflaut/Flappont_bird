@@ -53,7 +53,7 @@ GEMtity::GEMtity(string path, double new_pos[2], double new_speed[2], double new
     speed[1] = new_speed[1];
     acc[0] = new_acc[0];
     acc[1] = new_acc[1];
-    Imagine::load(image, path);
+    load(image, path);
     // Construction de la hitbox
     for (int y = 0; y < image.height(); y++) {
         for (int x = 0; x < image.width(); x++) {// On effectue une détection de transparence sur le plus petit rectangle contenant tout l'image
@@ -63,4 +63,7 @@ GEMtity::GEMtity(string path, double new_pos[2], double new_speed[2], double new
             }
         }
     }
+}
+void GEMtity::display(){
+    Imagine::display(image,pos[0],pos[1]);
 }
