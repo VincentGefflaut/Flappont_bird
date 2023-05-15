@@ -8,7 +8,10 @@ using namespace Imagine;
 #include <ctime>
 #include<iostream>
 #include <string>
+#include <chrono>
+
 using namespace std;
+using namespace std::chrono;
 
 // Méthodes de la classe GEMtity
 bool GEMtity::collision(GEMtity* entity){
@@ -66,4 +69,14 @@ GEMtity::GEMtity(string path, double new_pos[2], double new_speed[2], double new
 }
 void GEMtity::display(){
     Imagine::display(image,pos[0],pos[1]);
+}
+
+void GEMtity::refresh(double time_now){
+    double nouv_pos[2]={pos[0] + pow(time_now,2)/2*acc[0] + time_now*speed[0],
+                        pos[1] + pow(time_now,2)/2*acc[1] + time_now*speed[1]};
+    setPos(nouv_pos);
+    double nouv_speed[2] = {speed[0] + time_now*acc[0],
+                           speed[1] + time_now*acc[1]};
+    setSpeed(nouv_speed);
+
 }
