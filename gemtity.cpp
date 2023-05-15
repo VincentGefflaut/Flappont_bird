@@ -11,11 +11,17 @@ using namespace Imagine;
 using namespace std;
 
 // Méthodes de la classe GEMtity
-bool GEMtity::collision(GEMtity *entity){
-    for (int i = 0; int i <= hitbox.size(); i++){
+bool GEMtity::collision(GEMtity* entity){
+    for (int i = 0; i <= hitbox.size(); i++){
         QPointF point = hitbox.at(i);
+        // On va maintenant vérifier si ce point est dans la hitbox de l'entité en argument
+        auto in = std::find(entity->hitbox.begin(), entity->hitbox.end(), point);
+        if( in != entity->hitbox.end()){
+            return (true);
+        }
+        }
     }
-}
+
 void GEMtity::setImage(string chemin){
     load(image,chemin);
 }

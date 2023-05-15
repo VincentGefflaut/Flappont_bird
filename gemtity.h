@@ -23,17 +23,18 @@ class GEMtity{
     double acc[2];
     Image <Color> image;
 
-
-
     public:
     QVector<QPointF> hitbox;
     //méthodes
-    bool collision (GEMtity *entity);
+    bool collision (GEMtity* entity);
     void setImage(string chemin);
     void setBehaviour(double new_pos[2],  double new_speed[2], double new_acc[2]);
     void setPos(double new_pos[2]);
     void setSpeed(double new_speed[2]);
     void setAcc(double new_acc[2]);
+    void getPos(GEMtity* entity);
+    void getSpeed(GEMtity* entity);
+    void getAcc(GEMtity* entity);
     GEMtity(string path, double new_pos[2], double new_speed[2], double new_acc[2]);  //constructeur
     ~GEMtity();  //destructeur
 
