@@ -65,6 +65,12 @@ void GEMpage::show(GEMtity *entity, bool etat){
 }
 
 // Constructeur de la classe GEMpage
-GEMpage::GEMpage(vector<double> dim){
+GEMpage::GEMpage(int _dim[2]){
+    dim[0]=_dim[0];
+    dim[1]=_dim[1];
+}
+
+// Destructeur de la classe GEMpage
+GEMpage::~GEMpage(){
 
 }

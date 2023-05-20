@@ -34,7 +34,7 @@ private:
 };
 
 class GEMpage{
-    GEMpage(vector<double> dim);   //constructeur
+    GEMpage(int _dim[2]);   //constructeur
     ~GEMpage();  //destructeur
     //méthodes
     public:
@@ -43,5 +43,6 @@ class GEMpage{
     bool deleteEntity(GEMtity *entity);  //supprime une entité
     void show (GEMtity *entity, bool etat);  //affiche une entité
     //attributs
+    int dim[2];
     priorTity file_entities;
 };
