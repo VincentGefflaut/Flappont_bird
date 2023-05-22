@@ -21,9 +21,9 @@ int priorTity::getSize(){
     return entities.size();
 }
 
-double priorTity::add(GEMtity* entity, double layer){
-    int i=entities.size() - 1;
-    while(i>=0 && layers[i]>layer)
+void priorTity::add(GEMtity* entity, double layer){
+    int i=entities.size();
+    while(i>0 && layers[i]>layer)
         --i;
     entities.insert(next(entities.begin(),i),entity);
     layers.insert(next(layers.begin(),i),layer);
@@ -50,7 +50,9 @@ int priorTity::find_index(GEMtity* entity){
 
 // Méthodes de la classe GEMpage
 void GEMpage::refresh(){
+    for(int i=0;i<file_entities.getSize();++i){
 
+    }
 }
 void GEMpage::addEntity(GEMtity *entity, int layer){
     file_entities.add(entity,layer);
@@ -60,7 +62,22 @@ bool GEMpage::deleteEntity(GEMtity *entity){
     file_entities.del(entity);
 }
 
-void GEMpage::show(GEMtity *entity, bool etat){
+Window GEMpage::open(){
+    win = openWindow(dim[0],dim[1]);
+    setActiveWindow(win);
+    return win;
+
+}
+
+void GEMpage::close(){
+
+}
+
+void GEMpage::show(){
+    for(int i=0;i<file_entities.getSize();++i){
+        cout << "TEST" << i << endl;
+        file_entities[i]->display();
+    }
 
 }
 

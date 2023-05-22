@@ -25,6 +25,7 @@ bool GEMtity::collision(GEMtity* entity){
 void GEMtity::setImage(string chemin){
     load(image,chemin);
 }
+
 void GEMtity::setBehaviour(double new_pos[2],  double new_speed[2], double new_acc[2]){
     pos[0] = new_pos[0];
     pos[1] = new_pos[1];
@@ -64,6 +65,10 @@ GEMtity::GEMtity(string path, double new_pos[2], double new_speed[2], double new
         }
     }
 }
+
+GEMtity::~GEMtity(){
+
+}
 void GEMtity::display(){
-    Imagine::display(image,pos[0],pos[1]);
+    Imagine::display(image,int(pos[0]-image.width()/2) ,int(pos[1]-image.height()/2));
 }

@@ -10,11 +10,6 @@ using namespace Imagine;
 #include <string>
 #include <vector>
 using namespace std;
-//Définition des constantes des éléments
-int wFlappont = 30;
-int hFlappont = 30;
-int wTuyau = 50;
-int hTuyau = 250;
 class GEMtity{
     //attributs
     string chemin_image;

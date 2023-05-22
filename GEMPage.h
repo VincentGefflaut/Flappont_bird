@@ -20,29 +20,34 @@ public:
     ~priorTity();
 
     int getSize();
-    double add(GEMtity* entity, double layer);
+    void add(GEMtity* entity, double layer);
     double del(GEMtity* entity);
     double getLayer(GEMtity* entity);
+
+    GEMtity* operator[](int index) {
+        return entities[index];
+    }
 
 private:
     vector<GEMtity*> entities;
     vector<double> layers;
     int find_index(GEMtity* entity);
-}
-
-
 };
 
 class GEMpage{
+public:
     GEMpage(int _dim[2]);   //constructeur
     ~GEMpage();  //destructeur
     //méthodes
-    public:
     void refresh();  //rafraichit l'affichage de la page
     void addEntity(GEMtity *entity, int layer);  //ajoute une entité à la page au niveau layer
     bool deleteEntity(GEMtity *entity);  //supprime une entité
-    void show (GEMtity *entity, bool etat);  //affiche une entité
+    Window open();
+    void close();
+    void show ();  //affiche une entité
+private:
     //attributs
     int dim[2];
     priorTity file_entities;
+    Window win;
 };
