@@ -35,6 +35,9 @@ void GEMtity::setBehaviour(double new_pos[2],  double new_speed[2], double new_a
     speed[1] = new_speed[1];
     acc[0] = new_acc[0];
     acc[1] = new_acc[1];
+    for (int i = 0; i<hitbox.size(); i++ ){
+        hitbox[i] = hitbox[i] + QPointF(new_pos[0]-pos[0], new_pos[1]-pos[1]);
+    }
 }
 
 void GEMtity::setPos(double new_pos[2]){
@@ -58,8 +61,8 @@ GEMtity::GEMtity(string path, double new_pos[2], double new_speed[2], double new
     acc[1] = new_acc[1];
     load(image, path);
     // Construction de la hitbox
-    for (int y = 0; y < image.height(); y++) {
-        for (int x = 0; x < image.width(); x++) {// On effectue une détection de transparence sur le plus petit rectangle contenant tout l'image
+    for (int y = new_pos[1]-(image.width()+1)/2; y < new_pos[1]+(image.width()+1)/2; y++) {
+        for (int x = new_pos[0]-(image.width()+1)/2; x < new_pos[0]+(image.width()+1)/2; x++) {// On effectue une détection de transparence sur le plus petit rectangle contenant tout l'image
             Color pixel = image(x, y);
             if (pixel.r() == 0 && pixel.g() == 0 && pixel.b() == 0) { // On vérifie que le pixel est transparent ie rouge, vert et bleu nul
                 hitbox.append(QPointF(x, y));//On ajoute le point à notre hitbox
