@@ -25,7 +25,7 @@ class GEMtity{
     double speed[2];
     double acc[2];
     double time_prec;
-    Image <Color> image;
+    Image <AlphaColor> image;
     QVector<QPointF> hitbox;
     public:
     //méthodes

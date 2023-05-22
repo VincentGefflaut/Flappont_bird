@@ -1,5 +1,5 @@
 #include "GEMPage.h"
-#include "gemtity.h"
+#include "GEMtity.h"
 #include <Imagine/Graphics.h>
 #include <Imagine/Images.h>
 using namespace Imagine;
