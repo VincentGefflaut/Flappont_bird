@@ -28,9 +28,6 @@ private:
     vector<GEMtity*> entities;
     vector<double> layers;
     int find_index(GEMtity* entity);
-}
-
-
 };
 
 class GEMpage{

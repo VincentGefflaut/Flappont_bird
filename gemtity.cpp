@@ -15,7 +15,7 @@ using namespace std::chrono;
 
 // Méthodes de la classe GEMtity
 bool GEMtity::collision(GEMtity* entity){ //Fonction de détection de collision entre 2 entités
-    for (int i = 0; i <= hitbox.size(); i++){
+    for (int i = 0; i < hitbox.size(); i++){
         QPointF point = hitbox.at(i);
         // On va maintenant vérifier si ce point est dans la hitbox de l'entité en argument
         auto in = std::find(entity->hitbox.begin(), entity->hitbox.end(), point);
@@ -64,7 +64,11 @@ GEMtity::GEMtity(string path, double new_pos[2], double new_speed[2], double new
     for (int y = int(new_pos[1]-(image.width()+1)/2); y < int(new_pos[1]+(image.width()+1)/2); y++) {
         for (int x = int(new_pos[0]-(image.width()+1)/2); x < int(new_pos[0]+(image.width()+1)/2); x++) {// On effectue une détection de transparence sur le plus petit rectangle contenant tout l'image
             AlphaColor pixel = image(x, y);
-            if (pixel.a() == 0) { // On vérifie que le pixel est transparent ie rouge, vert et bleu nul
+            AlphaColor pixel1 = image(x-1,y);
+            AlphaColor pixel2 = image(x,y-1);
+            AlphaColor pixel3 = image(x+1,y);
+            AlphaColor pixel4 = image(x,y+1);
+            if (pixel.a() == 255 && pixel1.a() == 0 ||pixel2.a() == 0 ||pixel3.a() == 0||pixel4.a() == 0) { // On vérifie que le pixel est transparent ie rouge, vert et bleu nul
                 hitbox.append(QPointF(x, y));//On ajoute le point à notre hitbox
             }
         }
